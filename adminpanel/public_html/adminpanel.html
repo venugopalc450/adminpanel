@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Admin panel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="custom.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <!--        <div>TODO write content</div>-->
+        <div class="contianer">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Account Open</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading panel_sub_custom">Member Information</div>
+                                <div class="panel panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="radio" id="newmember"  value="newmember" name="newmember" /> New Member 
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="radio" id="oldMember"  value="oldmember" name="oldmember" /> Old Member 
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            ID:
+                                        </div>
+                                        <input type="text" class="col-md-6" name="id" id="id"/>
+                                        <div class="col-md-2">
+                                            <button class="btn btn-success"> <i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            A/C No:
+                                        </div>
+                                        <input type="text" class="col-md-8" name="A/C NO" id="acno"/>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading panel_sub_custom">Account Information</div>
+                                <div class="panel panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6" >
+                                            Account Type: 
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select name="AccountType" id="accountType" class="form-control">
+                                                <option value="Savings A/C">Savings A/C</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Date Of Open:
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-group date" data-provide="datepicker">
+                                                <input type="text" class="form-control">
+                                                <div class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-th"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            Operation Type:
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select name="OperationType" id="OperationType" class="form-control">
+                                                <option value="Operation Type">Joint A/C</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading panel_sub_custom">Deopist Information</div>
+                                <div class="panel panel-body">
+                                    <div class="row">
+                                        <div class="col-md-3" >
+                                            Deposit Type: 
+                                        </div>
+                                        <div class="col-md-9">
+                                            <select name="DepositType" id="depositType" class="form-control">
+                                                <option value="DepositType">SAVING DEPOSIT (INDIVIDUAL MEMBERS)</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Scheme Type:
+                                        </div>
+                                        <div class="col-md-9">
+                                            <select name="SchemeType" id="schemeType" class="form-control">
+                                                <option value="SchemeType">SAVINGS-Annualy</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            Amount:
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" id="amount" class="form-control" value="0"/>
+                                        </div>
+                                        <div class="col-md-2">
+                                            Interest:
+                                        </div>
+                                        <div class="col-md-2 input-group">
+                                            <input type="text" id="interest" class="form-control" value="4"/> 
+                                            <div class="input-group-addon">                                                  
+                                                <i class="fa fa-percent" style="color:red"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <button name="Desposite Details">Deposite Details</button>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button id="schemeDetails" name="Scheme Deatils">Scheme Details</button>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <ul class="nav nav-tabs responsive">
+                                <li class="active"><a data-toggle="tab" href="#1stApplicant">1st Applicant</a></li>
+                                <!--                <li><a data-toggle="tab" href="#runContinous">Run Continously </a></li>
+                                                <li><a data-toggle="tab" href="#wso2Queue">Wso2 Message Queue Counter</a></li>-->
+                                <li><a data-toggle="tab" href="#2ndApplicant">2nd Applicant</a></li>
+                                <li><a data-toggle="tab" href="#3rdApplicant">3rd Applicant</a></li>
+
+                            </ul>
+                            <div class="tab-content">
+                                <div id="1stApplicant" class="tab-pane fade in active">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading panel_sub_custom">Applicant's Information</div>
+
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-2"><p class="text-center">Initial</p></div><div class="col-md-1"></div>
+                                                <div class="col-md-2"><span class="form-control">First Name</span></div><div class="col-md-1"></div>
+                                                <div class="col-md-2"><span class="form-control">Middle Name</span></div><div class="col-md-1"></div>
+                                                <div class="col-md-2"><span class="form-control">Last Name</span></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <select name="intial" id="intial" class="form-control">
+                                                        <option></option>
+                                                        <option >Mr.</option>
+                                                        <option >Mrs.</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="input_field_background_green form-control" id="firstName"/>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="input_field_background_green form-control" id="middleName"/>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="input_field_background_green form-control" id="lastName"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <span class="text_with_border form-control">Guardian Name:</span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="text" class="input_field_background_blue form-control" id="guardianName"/>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <span >Relation</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <input type="text" class="form-control" name="relation"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <span class="form-control text-center">Gender:</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <select name="intial" id="intial" class="form-control">
+                                                        <option></option>
+                                                        <option>Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="form-control text-center">Date Of Birth</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="input-group date" data-provide="datepicker">
+                                                        <input type="text" class="form-control">
+                                                        <div class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-th"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <span class="input_field_background_green text-center form-control">L/F</span>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <input type="text" class="input_field_background_green col-md-2 form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-2" style="margin-top: 40px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading panel_sub_custom">
+                                    Photo Attach
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" class="img-rounded" alt="deafult Image" width="141" height="139"> 
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button  style="margin-top: 60px;" class="btn btn-success"> <i class="fa fa-search"></i></button>
+                                            <button class="btn btn-warning"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading panel_sub_custom">
+                                    Mailing Information
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Address:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" rows="3" id="Address"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>City:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>State:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Pin:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Mobile:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading panel_sub_custom">
+                                    Commertial Information
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>PAN Number:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="Address"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>ADHAR Number:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Voter ID Number:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Ration Card No:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Occupation:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control">
+                                                <option></option>
+                                                <option>Former</option>
+                                                <option>Software Engineer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Cust:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control">
+                                                <option></option>
+                                                <!--                                                <option>Former</option>
+                                                                                                <option>Software Engineer</option>-->
+                                            </select>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading panel_sub_custom">
+                                    Signature Attach
+                                </div>
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <input type="text" class="form-control text-center" value="SIGNATURE"/>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-10">
+                                            <button  class="btn btn-success"> <i class="fa fa-search"></i></button>
+                                            <button class="btn btn-warning"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <input type="checkbox"/>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p >
+                                                Allow Photo & Sign for Verify This Account
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading panel_sub_custom">
+                                    Nominee Information
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>Name:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>Pin:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>Address:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>Relation:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>City:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>State:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <span>DOB:</span>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="input-group date" data-provide="datepicker">
+                                                        <input type="text" class="form-control">
+                                                        <div class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-th"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading panel_sub_custom">
+                                    Existing Customer
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span>A/C No:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Name:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="row">
+                                        <div class="col-md-4">
+                                            <span>A/C Type:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-4">
+                                            <span>Sign:</span>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel-footer"><span>New: F3</span>&nbsp;&nbsp;  <span>Save :F2</span> &nbsp;&nbsp; <span>Save & Exit:F4</span> &nbsp;&nbsp;<span>Delete: F6</span> &nbsp;&nbsp;<span>Update: F7</span>&nbsp;&nbsp; <span>Find: F8</span> &nbsp;&nbsp;<span>Print: F9</span> &nbsp;&nbsp;<span>Exit: Esc</span> &nbsp;&nbsp; <span style="align-content: flex-end">Help F1</span></div>
+            </div>
+        </div>
+        <!-- add script files here-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="custom.js" type="text/javascript"></script>
+
+    </body>
+
+</html>

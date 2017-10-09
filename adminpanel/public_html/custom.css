@@ -1,0 +1,36 @@
+/* 
+    Created on : Oct 9, 2017, 12:55:26 PM
+    Author     : venugopalv
+*/
+
+.panel-footer{
+    background-color: #337ab7 !important;
+    color: #fff;
+}
+.panel_sub_custom{
+    background-color: #ce92e6 !important;
+    margin-bottom:0px !important;
+    
+}
+#amount{
+    background-color: #f3a191;
+}
+#schemeDetails{
+    background-color: #fff;
+    color: #2971f7;
+}
+.text_with_border{
+    margin-left: 2px;
+    text-align: center;
+    
+}
+.input_field_background_green{
+    background-color: #6eed83;
+   
+}
+.input_field_background_blue{
+    background-color: #afd9ee;
+    
+}
+
+
